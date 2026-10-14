@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning Hub</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #173b57;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #102b40;
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin: 5px 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #64d8cb;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .welcome h2,
+        .lesson-card h3 {
+            color: #173b57;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #176b87;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .button:hover {
+            background-color: #104d63;
+        }
+
+        .lesson-container {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .lesson-card,
+        .lesson {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .lesson-card h3 {
+            margin-top: 0;
+        }
+
+        .lesson {
+            margin: 25px 0;
+            scroll-margin-top: 20px;
+        }
+
+        .lesson h2 {
+            color: #173b57;
+        }
+
+        pre {
+            background-color: #172b3a;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        code {
+            background-color: #edf1f5;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .question {
+            margin: 20px 0;
+        }
+
+        .question p {
+            margin-bottom: 8px;
+        }
+
+        #quizResult {
+            color: #176b87;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+        }
+
+        @media (max-width: 700px) {
+            .lesson-container {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 0 15px;
+            }
+
+            .welcome,
+            .lesson-card,
+            .lesson {
+                padding: 20px;
+            }
+
+            nav a {
+                margin: 5px 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="home">
+        <h1>Python Learning Hub</h1>
+        <p>Learn Python programming one step at a time.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#lessons">Lessons</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main>
+        <section class="welcome">
+            <h2>Welcome to Python Learning Hub!</h2>
+            <p>
+                Are you new to programming? This website will help you
+                understand Python through simple lessons and practical examples.
+            </p>
+            <a href="#lessons" class="button">Start Learning</a>
+        </section>
+
+        <section id="lessons">
+            <h2 style="text-align: center;">Explore Python Lessons</h2>
+
+            <div class="lesson-container">
+                <div class="lesson-card">
+                    <h3>🐍 Python Basics</h3>
+                    <p>Learn variables, data types and Python syntax.</p>
+                    <a href="#basics" class="button">Explore Lesson</a>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>🔄 Conditions &amp; Loops</h3>
+                    <p>Understand decisions and repetition in Python.</p>
+                    <a href="#loops" class="button">Explore Lesson</a>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>⚙️ Python Functions</h3>
+                    <p>Learn how to organize and reuse your code.</p>
+                    <a href="#functions" class="button">Explore Lesson</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson" id="basics">
+            <h2>Lesson 1: Python Basics</h2>
+            <p>
+                Python is a programming language used to build applications,
+                automate tasks and work with data.
+            </p>
+            <p>Here is your first Python example:</p>
+            <pre><code>name = "Ayomide"
+print("Hello", name)</code></pre>
+            <p>This program stores a name in a variable and displays it.</p>
+        </section>
+
+        <section class="lesson" id="loops">
+            <h2>Lesson 2: Conditions and Loops</h2>
+            <p>Conditions allow a program to make decisions.</p>
+            <pre><code>score = 75
+
+if score >= 50:
+    print("You passed")
+else:
+    print("You failed")</code></pre>
+
+            <p>Loops allow us to repeat instructions.</p>
+            <pre><code>for number in range(1, 6):
+    print(number)</code></pre>
+        </section>
+
+        <section class="lesson" id="functions">
+            <h2>Lesson 3: Python Functions</h2>
+            <p>Functions are reusable blocks of code.</p>
+            <pre><code>def greet(name):
+    print("Hello", name)
+
+greet("Ayomide")</code></pre>
+            <p>Functions help make programs organized and reusable.</p>
+        </section>
+
+        <section class="lesson" id="quiz">
+            <h2>🧠 Test Your Python Knowledge</h2>
+            <p>Answer these three questions to test what you've learned.</p>
+
+            <form id="quizForm">
+                <div class="question">
+                    <p><strong>1. Which function displays text in Python?</strong></p>
+                    <label>
+                        <input type="radio" name="q1" value="a">
+                        input()
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" value="b">
+                        print()
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q1" value="c">
+                        display()
+                    </label>
+                </div>
+
+                <div class="question">
+                    <p><strong>2. Which keyword is used to define a function?</strong></p>
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        function
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        define
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        def
+                    </label>
+                </div>
+
+                <div class="question">
+                    <p><strong>3. Which loop is commonly used to iterate over a sequence?</strong></p>
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        for
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        repeat
+                    </label><br>
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        select
+                    </label>
+                </div>
+
+                <button type="submit" class="button">Submit Answers</button>
+            </form>
+
+            <h3 id="quizResult" aria-live="polite"></h3>
+        </section>
+
+        <section class="lesson" id="about">
+            <h2>About This Website</h2>
+            <p>
+                Python Learning Hub is an educational website designed to help
+                beginners understand Python programming through lessons and examples.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Python Learning Hub | Learn. Practise. Improve.</p>
+    </footer>
+
+    <script>
+        const quizForm = document.getElementById("quizForm");
+
+        quizForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const answers = {
+                q1: "b",
+                q2: "c",
+                q3: "a"
+            };
+
+            let score = 0;
+
+            for (const question in answers) {
+                const selected = document.querySelector(
+                    'input[name="' + question + '"]:checked'
+                );
+
+                if (selected && selected.value === answers[question]) {
+                    score++;
+                }
+            }
+
+            const result = document.getElementById("quizResult");
+            result.textContent = "You scored " + score + " out of 3!";
+
+            if (score === 3) {
+                result.textContent += " Excellent work! 🎉";
+            } else if (score >= 1) {
+                result.textContent += " Keep practising! 💪";
+            } else {
+                result.textContent += " Review the lessons and try again.";
+            }
+        });
+    </script>
+</body>
+</html>
